@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Outfit App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="theme-toggle">
+
+            <button id="themeBtn"
+            onclick="toggleTheme()">
+
+                🌙 Dark Mode
+
+            </button>
+
+        </div>
+
+        <h1>🌦 Weather Outfit Recommendation</h1>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name"
+            >
+
+            <button
+                class="search-btn"
+                onclick="getWeather()">
+
+                Search
+
+            </button>
+
+            <button
+                class="voice-btn"
+                onclick="startVoiceSearch()">
+
+                🎤
+
+            </button>
+
+        </div>
+
+        <!-- Voice Status Message -->
+        <div id="voiceStatus" class="voice-status"></div>
+
+        <div class="history-section">
+
+            <h2>Recent Searches</h2>
+
+            <div id="searchHistory" class="search-history"></div>
+
+        </div>
+
+        <div id="error" class="error"></div>
+
+        <div class="weather-card" id="weatherCard">
+
+            <div class="weather-icon">
+                <i id="weatherIcon" class="wi"></i>
+            </div>
+
+            <h2 id="cityName"></h2>
+
+            <p>
+                <i class="wi wi-thermometer"></i>
+                Temperature:
+                <span id="temp"></span>°C
+            </p>
+
+            <p>
+                <i class="wi wi-cloud"></i>
+                Condition:
+                <span id="condition"></span>
+            </p>
+
+            <p>
+                💧 Humidity:
+                <span id="humidity"></span>%
+            </p>
+
+            <p>
+                🌬 Wind Speed:
+                <span id="wind"></span> km/h
+            </p>
+
+            <div class="recommendation" id="recommendation"></div>
+
+            <div class="outfit-container" id="outfitContainer"></div>
+
+            <div class="forecast-container"
+            id="forecastContainer"></div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
